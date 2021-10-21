@@ -8,41 +8,26 @@ Aggiungerei: ocio  a non incasinarvi sui calcoli matematici, alla fine dovete ap
 
 /* chiediamo all'utenete quanti chilometri deve percorrere */
 
-const kiloMetri= parseInt(prompt("Prego inserire i chilometri che vuoi percorrere"))
-
-console.log(kiloMetri) 
-
+const kiloMetri= parseInt(prompt("Prego inserire i chilometri che vuoi percorrere"));
 /* calcoliamo km per przzo al km(0.21 al km) */
-
-let somma= kiloMetri*0.21
-
-console.log(somma)
-
+let costoBase= kiloMetri*0.21;
 /* chiediamo all'utenete quanti anni ha */
-
-const etaPassegiero= parseInt(prompt("Prego inserire la propria Eta"))
-
-console.log(etaPassegiero)
+const etaPasseggero= parseInt(prompt("Prego inserire la propria Eta"));
 
 /* se il cliente a meno di 18 anni impostiamlo uno sconto del 20% */
 /*  se altrimenti  il cliente a piu di 65 anni impostiamlo uno sconto del 40% */
 /* se il cliente a tra i 18 e 64 anni il prezzo sara normale */
+let risultato;
 
-let risultato
-
-
-if(etaPassegiero<18){
-    risultato=Math.round(somma-somma*20/100);
-
-}else if (etaPassegiero>65){
-    risultato=Math.round(somma-somma*40/100);
-
-}else{
-    risultato=Math.round(somma);
+if (etaPasseggero < 18) {
+    risultato = Math.round(costoBase-costoBase*20/100);
+    document.getElementById("myid").innerHTML = `Complimenti hai ricevuto uno sconto del 20% il prezzo del biglietto era ${costoBase}euro invece pagherai ${risultato}euro`
+} else if (etaPasseggero > 65) {
+    risultato = Math.round(costoBase-costoBase*40/100);
+    document.getElementById("myid").innerHTML = `Complimenti hai ricevuto uno sconto del 40% il prezzo del biglietto era ${costoBase}euro invece pagherai ${risultato}euro`
+} else {
+    risultato = Math.round(costoBase);
+    document.getElementById("myid").innerHTML = `il prezzo del biglietto è ${risultato}euro`
 }
-/* console.log(risultato) */
-document.getElementById("myid").innerHTML = `Il prezzo del tuo biglietto è ${risultato}`
-
-
 
 /* stampiamo a schermo il prezzo del biglietto con un  massimo due decimali */
