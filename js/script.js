@@ -38,7 +38,7 @@ if(etaPassegiero<18){
     risultato=Math.round(somma-somma*40/100);
 
 }else{
-    risultato=somma
+    risultato=Math.round(somma);
 }
 /* console.log(risultato) */
 document.getElementById("myid").innerHTML = `Il prezzo del tuo biglietto è ${risultato}`
