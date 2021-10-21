@@ -10,7 +10,7 @@ Aggiungerei: ocio  a non incasinarvi sui calcoli matematici, alla fine dovete ap
 
 const kiloMetri= parseInt(prompt("Prego inserire i chilometri che vuoi percorrere"))
 
-console.log(kiloMetri)
+console.log(kiloMetri) 
 
 /* calcoliamo km per przzo al km(0.21 al km) */
 
@@ -25,21 +25,24 @@ const etaPassegiero= parseInt(prompt("Prego inserire la propria Eta"))
 console.log(etaPassegiero)
 
 /* se il cliente a meno di 18 anni impostiamlo uno sconto del 20% */
-let sconto
-let minorenne
-/* let anziano
-let prezzoIntero */
-
-if(etaPassegiero<18)
-minorenne= somma*20/100
-
-sconto=somma-minorenne
-
-
-console.log(minorenne)
-
 /*  se altrimenti  il cliente a piu di 65 anni impostiamlo uno sconto del 40% */
-
 /* se il cliente a tra i 18 e 64 anni il prezzo sara normale */
+
+let risultato
+
+
+if(etaPassegiero<18){
+    risultato=Math.round(somma-somma*20/100);
+
+}else if (etaPassegiero>65){
+    risultato=Math.round(somma-somma*40/100);
+
+}else{
+    risultato=somma
+}
+/* console.log(risultato) */
+document.getElementById("myid").innerHTML = `Il prezzo del tuo biglietto è ${risultato}`
+
+
 
 /* stampiamo a schermo il prezzo del biglietto con un  massimo due decimali */
